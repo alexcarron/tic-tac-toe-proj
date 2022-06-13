@@ -8,9 +8,7 @@ let game = (function() {
 	let isGameOver = false;
 			
 	const displayGameboard = function() {
-		let gameboard_cells = document.querySelectorAll("div.cell"),
-			gameboard = this.gameboard;
-				
+		let gameboard_cells = document.querySelectorAll("div.cell");				
 		for (let i = 0; i < gameboard_cells.length; i++) {
 			let cell_index = i,
 				cell_element = gameboard_cells[cell_index],
@@ -26,18 +24,19 @@ let game = (function() {
 		let row = cell_index % 3,
 			column = Math.floor(cell_index / 3);
 			
-		this.gameboard[column][row] = this.selected_mark;
+		gameboard[column][row] = selected_mark;
+		displayGameboard()
 	}
 	
 	const toggleSelectedMark = function() {
-		this.selected_mark = this.selected_mark === "X" ? "O" : "X"
+		selected_mark = selected_mark === "X" ? "O" : "X"
 	}
 	
 	const checkIfGameOver = function() {	
 		
-		for (let i = 0; i < this.gameboard.length; i++) {
+		for (let i = 0; i < gameboard.length; i++) {
 			let row_index = i,
-				row = this.gameboard[row_index],
+				row = gameboard[row_index],
 				areAllMarksEqual = true;
 			
 			for (let j = 1; j < row.length; j++) {
@@ -51,18 +50,18 @@ let game = (function() {
 			}
 			
 			if (areAllMarksEqual) {
-				return this.isGameOver = true;
+				return isGameOver = true;
 			}
 		}		
 		
-		for (let i = 0; i < this.gameboard[0].length; i++) {
+		for (let i = 0; i < gameboard[0].length; i++) {
 			let col_index = i,
 				areAllMarksEqual = true;
 			
-			for (let j = 1; j < this.gameboard.length; j++) {
+			for (let j = 1; j < gameboard.length; j++) {
 				let row_index = j,
-					mark = this.gameboard[row_index][col_index],
-					first_mark = this.gameboard[0][col_index];
+					mark = gameboard[row_index][col_index],
+					first_mark = gameboard[0][col_index];
 				
 				console.log(col_index, row_index, mark, first_mark, areAllMarksEqual);
 					
@@ -70,23 +69,23 @@ let game = (function() {
 			}
 			
 			if (areAllMarksEqual) {
-				return this.isGameOver = true;
+				return isGameOver = true;
 			}
 		}	
 		
 		let areAllMarksEqual = true,
 			reverseAreAllMarksEqual = true;
 		
-		for (let i = 1; i < this.gameboard[0].length; i++) {
+		for (let i = 1; i < gameboard[0].length; i++) {
 			let col_index = i,
 				row_index = i,
-				mark = this.gameboard[row_index][col_index],
-				first_mark = this.gameboard[0][0];
+				mark = gameboard[row_index][col_index],
+				first_mark = gameboard[0][0];
 				
 			let reverse_col_index = -i + 2,
 				reverse_row_index = -i + 2,
-				reverse_mark = this.gameboard[reverse_row_index][reverse_col_index],
-				reverse_first_mark = this.gameboard[0][2];
+				reverse_mark = gameboard[reverse_row_index][reverse_col_index],
+				reverse_first_mark = gameboard[0][2];
 				
 			console.log(col_index, row_index, mark, first_mark, areAllMarksEqual);
 					
@@ -95,12 +94,11 @@ let game = (function() {
 		}
 			
 		if (areAllMarksEqual || reverseAreAllMarksEqual) {
-			return this.isGameOver = true;
+			return isGameOver = true;
 		}
 	}
 	
 	return {
-		gameboard, selected_mark, isGameOver,
 		displayGameboard, addMark, toggleSelectedMark, checkIfGameOver
 	};
 })();
