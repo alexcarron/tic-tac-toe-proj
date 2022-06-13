@@ -21,7 +21,7 @@
 		<link rel='stylesheet' href='./styles/main.css' type='text/css'>
 		<script src='./scripts/script.js'></script>
 		
-		<title> Document </title>
+		<title> Tic Tac Toe </title>
 	</head>
 	
 	<body>
@@ -43,6 +43,33 @@
 		<main>
 			
 			<section>
+				
+				<div id="gameboard">
+					
+					<div class="cell" onclick="game.addMark(0)"></div>
+					<div class="cell" onclick="game.addMark(1)"></div>
+					<div class="cell" onclick="game.addMark(2)"></div>
+					<div class="cell" onclick="game.addMark(3)"></div>
+					<div class="cell" onclick="game.addMark(4)"></div>
+					<div class="cell" onclick="game.addMark(5)"></div>
+					<div class="cell" onclick="game.addMark(6)"></div>
+					<div class="cell" onclick="game.addMark(7)"></div>
+					<div class="cell" onclick="game.addMark(8)"></div>
+					
+				</div>
+				
+			</section>
+			
+			<section id="buttons">
+				
+				<div id="mark_toggle_container">
+					<p> Change Mark </p>
+					<button id="mark_toggle_button" onclick="
+						game.toggleSelectedMark(); 
+						this.textContent = this.textContent === 'X' ? 'O' : 'X';
+					">X</button>
+				</div>
+				
 			</section>
 			
 		</main>
