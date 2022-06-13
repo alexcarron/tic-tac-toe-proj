@@ -1,8 +1,8 @@
 let game = (function() {
 	let gameboard = [
-		["X", "X", "O"],
-		["O", "X", "X"],
-		["X", "O", "O"]
+		[],
+		[],
+		[]
 	];
 	let selected_mark = "X";
 	let isGameOver = false;
@@ -99,6 +99,6 @@ let game = (function() {
 	}
 	
 	return {
-		displayGameboard, addMark, toggleSelectedMark, checkIfGameOver
+		addMark, toggleSelectedMark, checkIfGameOver
 	};
 })();

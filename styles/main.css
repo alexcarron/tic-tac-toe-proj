@@ -154,18 +154,34 @@ nav {
 	
 	/* @ Buttons Section */
 	main>section#buttons {
-		gap: 10px;
+		gap: 50px;
+		
+		font-weight: bold;
 	}
 		
-		/* ! Mark Toggle Button Container */
-		main>section#buttons div#mark_toggle_container {
+		/* ! Button Containers */
+		main>section#buttons div {
 			display: flex;
 			flex-direction: column;
 			align-items: center;
 			gap: 10px;
-			
-			font-weight: bold;
 		}
+		
+			/* & Buttons On Hover */
+			main>section#buttons button:hover {
+				filter: brightness(120%);
+			}
+		
+			/* & Name Input */
+			main>section#buttons div#enter_name_container input {
+				border: 3px var(--dark-color) solid;
+				border-radius: 5px;
+				background: var(--very-light-color);
+				
+				color: var(--very-dark-color);
+				font-size: 20px;
+				text-align: center;
+			}
 			
 			/* & Mark Toggle Button */
 			main>section#buttons button#mark_toggle_button {
