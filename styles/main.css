@@ -3,9 +3,9 @@
 	--most-light-color: #FFFFFF;
 	--very-light-color: #E6E6E6;
 	--call-to-action-color: #ffbf00;
-	--bright-color: #2957c2;
-	--light-color: #3055aa;
-	--dark-color: #265471;
+	--bright-color: #5674b9;
+	--light-color: #485e91;
+	--dark-color: #32436b;
 	--very-dark-color: #343434;
 	--most-dark-color: #000000;
 }
@@ -77,7 +77,7 @@ nav {
 	}
 
 	nav a:hover {
-		filter: brightness(150%);
+		background: brightness(150%);
 	}
 	
 
@@ -115,6 +115,11 @@ nav {
 				color: var(--very-light-color);
 				font-weight: bold;
 				font-size: 80px;
+				
+				cursor: pointer;
+			}
+			div#gameboard div.cell:hover {
+				filter: contrast(120%);
 			}
 			
 			/* & Every other cell */
@@ -146,6 +151,36 @@ nav {
 			font-size: 14pt;
 			margin-top: 10px;
 		}
+	
+	/* @ Buttons Section */
+	main>section#buttons {
+		gap: 10px;
+	}
+		
+		/* ! Mark Toggle Button Container */
+		main>section#buttons div#mark_toggle_container {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			gap: 10px;
+			
+			font-weight: bold;
+		}
+			
+			/* & Mark Toggle Button */
+			main>section#buttons button#mark_toggle_button {
+				aspect-ratio: 1;
+				height: 50px;
+				border: 3px var(--dark-color) solid;
+				border-radius: 10px;
+				background: var(--light-color);
+				
+				color: var(--very-light-color);
+				font-size: 30px;
+				font-weight: bold;
+				
+				cursor: pointer;
+			}
 		
 /* ^ FOOTER */
 footer {
