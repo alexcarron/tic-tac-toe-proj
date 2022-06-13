@@ -1,9 +1,11 @@
-let Gameboard = {
-	gameboard: 
+let Gameboard = (function() {
+	let gameboard = 
 		["X", "X", "O",
 		"O", "X", "X",
-		"X", "O", "O"],		
-}
+		"X", "O", "O"]
+	
+	return {gameboard}
+})();
 
 function displayGameboard() {
 	let gameboard_cells = document.querySelectorAll("div.cell");
