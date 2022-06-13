@@ -197,6 +197,19 @@ nav {
 				
 				cursor: pointer;
 			}
+			
+			/* & Reset Button */
+			main>section#buttons button#reset_button {
+				border: 2px var(--dark-color) solid;
+				border-radius: 5px;
+				background: var(--light-color);
+				padding: 3px 10px;
+				
+				color: var(--very-light-color);
+				font-size: 18px;
+				font-weight: 550;
+				cursor: pointer;
+			}
 		
 /* ^ FOOTER */
 footer {
