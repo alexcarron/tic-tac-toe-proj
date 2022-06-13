@@ -98,7 +98,18 @@ let game = (function() {
 		}
 	}
 	
+	const reset = function() {
+		gameboard = [
+			[],
+			[],
+			[]
+		]
+		
+		displayGameboard();
+		isGameOver = false;
+	}
+	
 	return {
-		addMark, toggleSelectedMark, checkIfGameOver
+		addMark, toggleSelectedMark, checkIfGameOver, reset
 	};
 })();
