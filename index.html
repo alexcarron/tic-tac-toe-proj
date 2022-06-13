@@ -75,11 +75,11 @@
 					">X</button>
 				</div>
 				
-				<div id="mark_toggle_container">
-					<button id="mark_toggle_button" onclick="
-						game.toggleSelectedMark(); 
-						this.textContent = this.textContent === 'X' ? 'O' : 'X';
-					"> Restart </button>
+				<div id="reset_container">
+					<p> Restart Game </p>
+					<button id="reset_button" onclick="
+						game.reset()
+					"> Reset </button>
 				</div>
 				
 			</section>
