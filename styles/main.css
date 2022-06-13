@@ -213,13 +213,12 @@ nav {
 			}
 	
 	/* @ Congratulations Display Section */
-	main>section#congrtulations_display {
-		
-		font-weight: bold;
+	main>section#congratulations_display {
+		display: none;
 	}
 	
 		/* ! Congratulations Text */
-		main>section#congrtulations_display p {
+		main>section#congratulations_display p {
 			background-color: var(--call-to-action-color);
 			padding: 30px 100px;
 			border-radius: 10px;
