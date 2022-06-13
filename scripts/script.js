@@ -1,9 +1,11 @@
-let Gameboard = (function() {
+let game = (function() {
 	let gameboard = 
 		["X", "X", "O",
 		"O", "X", "X",
-		"X", "O", "O"]
-	
+		"X", "O", "O"];
+		
+	let selected_mark = "X"
+			
 	const displayGameboard = function() {
 		let gameboard_cells = document.querySelectorAll("div.cell");
 	
@@ -15,9 +17,13 @@ let Gameboard = (function() {
 		}
 	}
 	
-	const addMark = function(location, mark) {
-		this.gameboard[location] = mark;
+	const addMark = function(location) {
+		this.gameboard[location] = this.selected_mark;
 	}
-		
-	return {gameboard, displayGameboard, addMark}
+	
+	const toggleSelectedMark = function() {
+		this.selected_mark = this.selected_mark === "X" ? "O" : "X"
+	}
+	
+	return {gameboard, selected_mark, displayGameboard, addMark, toggleSelectedMark};
 })();
